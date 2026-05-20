@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
 
-import { checkGuess, type LetterResult } from './wordle.ts';
+import { checkGuess, getDayNumber, type LetterResult } from './wordle.ts';
+
+describe('getDayNumber', () => {
+  it('returns 0 for the start date', () => {
+    expect(getDayNumber(new Date(2026, 4, 20))).toBe(0);
+  });
+
+  it('returns 1 for the day after the start date', () => {
+    expect(getDayNumber(new Date(2026, 4, 21))).toBe(1);
+  });
+});
 
 type TestCase = {
   description: string;
@@ -9,7 +19,7 @@ type TestCase = {
   expected: LetterResult[];
 };
 
-const cases: TestCase[] = [
+const checkGuessCases: TestCase[] = [
   {
     description: 'returns all green for a correct guess',
     guess: 'slate',
@@ -58,7 +68,7 @@ const cases: TestCase[] = [
 ];
 
 describe('checkGuess', () => {
-  cases.forEach(({ description, guess, answer, expected }) => {
+  checkGuessCases.forEach(({ description, guess, answer, expected }) => {
     it(description, () => {
       expect(checkGuess(guess, answer)).toEqual(expected);
     });
