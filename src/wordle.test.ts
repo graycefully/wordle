@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { checkGuess, getDayNumber, type LetterResult } from './wordle.ts';
+import { checkGuess, getDayNumber, type LetterResult } from './wordle';
 
 describe('getDayNumber', () => {
   it('returns 0 for the start date', () => {
