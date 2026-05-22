@@ -1,11 +1,10 @@
 .key {
   height: 58px;
-  min-width: 43px;
-  padding: 0 8px;
+  padding: 0 14px;
   border-radius: 4px;
   background-color: #d3d6da;
   color: #000;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
@@ -26,4 +25,13 @@
 .key.grey {
   background-color: #787c7e;
   color: white;
+}
+
+.key.wide {
+  padding: 0 14px;
+  min-width: 43px;
+}
+
+.key.enter {
+  font-size: 0.75rem;
 }
